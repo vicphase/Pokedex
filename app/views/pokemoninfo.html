@@ -1,0 +1,58 @@
+<div class="row">
+  <div id="pokemonPhoto" class="col-xs-4">
+    <img src="{{pokemonInfo.pokemon.sprites.front_shiny}}" id="pokePhoto" class="img-responsive">
+  </div>
+  <div id="pokemonDescription" class="col-xs-8">
+    <div>
+      <h3 id="pokemonName" class="same-line">#{{pokemonInfo.pokemon.id}} {{pokemonInfo.pokemon.name}}</h3>
+      <img src="../images/pokeball.png" class="img-responsive same-line icon margin-left" alt="Responsive image">
+      <img src="../images/star.png" class="img-responsive same-line icon  margin-left" alt="Responsive image">
+    </div>
+    <p class="height">{{pokemonInfo.pokemon.height}}m.  {{pokemonInfo.pokemon.weight}}kg.</p>
+    <p class="entry">{{pokemonInfo.species.flavor_text_entries[1].flavor_text}}.</p>
+    
+      <div>
+      <p ng-repeat="type in pokemonInfo.pokemon.types" class="text-center {{type.type.name}} type{{$index+1}}">{{type.type.name}}</p>
+      </div>
+  </div>
+</div>
+<div class="row background-gray">
+  <div class="col-xs-11 col-xs-offset-1">
+    <h4 class="font-white">General information</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+    <h4>Hidden Abilities</h4>
+  </div>
+  <div class="col-xs-5 col-xs-offset-1">
+    <h4 class="gray-font">{{pokemonInfo.pokemon.abilities[0].ability.name}}</h4>
+  </div>
+</div>
+<div class="row border-top-gray">
+  <div class="col-xs-5 col-xs-offset-1">
+    <h4>Location</h4>
+  </div>
+  <div class="col-xs-5 col-xs-offset-1">
+    <h4 class="gray-font">{{pokemonInfo.species.habitat.name}}</h4>
+  </div>
+</div>
+<div class="row background-gray">
+  <div class="col-xs-11 col-xs-offset-1">
+    <h4 class="font-white">Evolution</h4>
+  </div>
+</div>
+<div ng-repeat="evolution in pokemonInfo.evolution_details" class="row pokemonEvolution">
+  <div class="col-xs-4">
+    <img src="{{evolution.sprites.front_shiny}}" class="img-responsive border-gray" alt="Responsive image">
+  </div>
+  <div class="col-xs-8">
+    <p class="float-right">#{{evolution.id}}</p>
+    <h4>{{evolution.name}}</h4>
+      <div>
+      <p ng-repeat="type in evolution.types" class="text-center {{type.type.name}} type{{$index+1}}">{{type.type.name}}</p>
+      </div>
+  </div>
+</div>
+  </div>
+</div>

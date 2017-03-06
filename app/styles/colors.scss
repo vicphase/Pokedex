@@ -1,0 +1,137 @@
+
+/* ==========================================================================
+  Colors of the application
+   ========================================================================== */
+
+// Primary colors
+
+$dark-red: #C2185B;
+$red: #E91E63;
+$gray: #949494;
+$yellow: #E0E02D;
+
+//Secondary colors (Pokemon types)
+$bug: #67AB9F;
+$dark: #212121;
+$dragon: #7F628C;
+$electric: #E6C35C;
+$fairy: #FF66B3;
+$fight: #964542;
+$fire: #FF8000;
+$flying: #D5BEED;
+$ghost: #966DAB;
+$grass: #97D077;
+$ground: #E6C35C;
+$ice: #8AE6E6;
+$normal: #ECF0F1;
+$poison: #A341A3;
+$psychic: #E91E63;
+$rock: #A37448;
+$steel: #999999;
+$water: #3399FF;
+
+#navbar{
+  background-color: $red;}
+
+#description{
+  color:white;
+}
+  #pokemonName{
+    color: $red;
+  }
+
+//Pokemon types
+.type1{
+  color:white;
+}
+
+.type2{
+  color:white;
+}
+
+ .Bug{
+   background-color: $bug;
+ } 
+
+  .Dark{
+   background-color: $dark;
+ } 
+
+  .Dragon{
+   background-color: $dragon;
+ } 
+
+  .Electric{
+   background-color: $electric;
+ } 
+
+  .Fairy{
+   background-color: $fairy;
+ } 
+
+  .Fighting{
+   background-color: $fight;
+ } 
+
+  .Fire{
+   background-color: $fire;
+ } 
+
+  .Flying{
+   background-color: $flying;
+ } 
+
+  .Ghost{
+   background-color: $ghost;
+ } 
+
+  .Grass{
+   background-color: $grass;
+ } 
+
+  .Ground{
+   background-color: $ground;
+ } 
+
+  .Ice{
+   background-color: $ice;
+ } 
+
+  .Normal{
+   background-color: $normal;
+ } 
+
+ .Poison{
+   background-color: $poison;
+ } 
+
+ .Psychic{
+   background-color: $psychic;
+ }
+
+  .Rock{
+   background-color: $rock;
+ }
+
+  .Steel{
+   background-color: $steel;
+ }
+
+  .Water{
+   background-color: $water;
+ }
+
+//Font colors
+ .gray-font{
+    color:$gray;
+  }
+
+  .font-white{
+  color:white;
+}
+
+//Background colors
+  
+.background-gray{
+  background-color:$gray;
+}

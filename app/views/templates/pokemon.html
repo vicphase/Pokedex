@@ -1,0 +1,15 @@
+    <a  ng-href='#/pokemonInfo/{{pokemon.id}}'
+    >
+    <div class="row pokemonEvolution">
+  <div class="col-xs-4">
+    <img src="../../images/pokemons/{{pokemon.name}}.jpg" class="img-responsive border-gray adjust-size" alt="Responsive image">
+  </div>
+  <div class="col-xs-8 font-black">
+    <p class="float-right">#{{pokemon.id}}</p>
+    <h4>{{pokemon.name}}</h4>
+      <div>
+      <p ng-repeat="type in pokemon.type" class="text-center {{type}} type{{$index+1}}">{{type}}</p>
+      </div>
+  </div>
+</div>
+    </a>

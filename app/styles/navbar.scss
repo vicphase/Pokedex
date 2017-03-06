@@ -1,0 +1,18 @@
+$red: #E91E63;
+
+.navbar{
+  background-color: $red;
+  color:white;
+}
+
+#bs-example-navbar-collapse-1 > ul > li > a{
+    color:white;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+background-color:white !important;
+}  
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+  background-color: $red;
+}
