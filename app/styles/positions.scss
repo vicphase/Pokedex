@@ -10,6 +10,7 @@
    display: inline-block;
    float: left;
    margin-top: 10px;
+   margin-left: 5px;
 }
 
 #pokemonName{
@@ -25,14 +26,23 @@
 }
 
 .type1{
-    float: left;
     display: inline-block;
+    float:left;
 }
 
 .type2{
-    float: left;
     display: inline-block;
     margin-left: 15px;
+    float:left;
+
+}
+
+.type-main{
+    margin-left: 8px;
+}
+
+.type1{
+    margin-left: 0;
 }
 
 .same-line{
@@ -64,4 +74,37 @@ display: inline;
 
 .height {
     margin: 0;
+}
+
+.pokeball{
+    margin-right: 5px;
+}
+
+.searchBar{
+    margin-bottom: 10px;
+}
+
+.no-margin{
+    margin:0;
+}
+
+.navbar-collapse {
+  text-align:center;
+}
+
+.navbar-nav {
+    display:inline-block;
+    float:none;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+.navbar-toggle {
+    z-index:3;
 }

@@ -8,9 +8,9 @@
  * Controller of the pokedexApp
  */
 angular.module('pokedexApp')
-  .controller('PokemoninfoCtrl', function ($http, $routeParams) {
+  .controller('PokemoninfoCtrl', function ($http, $routeParams, $rootScope) {
    var vm=this;
-   
+
      //Get Pokemon information
   $http({method: 'GET', url: 'http://pokeapi.co/api/v2/pokemon/'+$routeParams.id})
   .then(function(data){
@@ -39,14 +39,13 @@ angular.module('pokedexApp')
       //  vm.species.flavor_text_entries[1].flavor_text=vm.species.flavor_text_entries[1].flavor_text.substring(0,vm.species.flavor_text_entries[1].flavor_text.indexOf('.')); 
       //Habitat
      string=capitalizeFirstLetter(vm.species.habitat.name);   
-     vm.species.habitat.name=string.replace(/-/g, " ");
+     vm.species.habitat.name=string.replace(/-/g,' ');
 
          //Get pokemon evolution chain
     $http({method: 'GET', url: vm.species.evolution_chain.url})
   .then(function(data){ 
 
    var evoData = data.data.chain;
-
      var evoChain = [];
 
      do {
@@ -75,22 +74,16 @@ evoChain.forEach(function (item) {
       item.type.name=capitalizeFirstLetter(item.type.name);
     }); 
     evolutionInfo.push(pokemon);
-
-
-   });
-   
-  });
-      //Sort evolutions
-    evolutionInfo.sort(function(a, b) {
-    return parseFloat(a.id) - parseFloat(b.id);
-});
       //Sort evolutions
     evolutionInfo.sort(function(a, b) {
     return parseFloat(a.order) - parseFloat(b.order);
 });
 
-console.log(evolutionInfo);
-    vm.evolution_details=evolutionInfo;
+   });
+   
+  });
+
+ vm.evolution_details=evolutionInfo;
 
    });
    });

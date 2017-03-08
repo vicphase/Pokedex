@@ -1,15 +1,22 @@
-    <a  ng-href='#/pokemonInfo/{{pokemon.id}}'
+
+    <div class="row pokemonEvolution border-top-gray">
+       <a  ng-href='#/pokemonInfo/{{pokemon.id}}'
     >
-    <div class="row pokemonEvolution">
   <div class="col-xs-4">
     <img src="../../images/pokemons/{{pokemon.name}}.jpg" class="img-responsive border-gray adjust-size" alt="Responsive image">
   </div>
+       </a>
   <div class="col-xs-8 font-black">
     <p class="float-right">#{{pokemon.id}}</p>
-    <h4>{{pokemon.name}}</h4>
+     <a  ng-href='#/pokemonInfo/{{pokemon.id}}'>
+    <h4 class="font-black">{{pokemon.name}}</h4>
+     </a>
       <div>
-      <p ng-repeat="type in pokemon.type" class="text-center {{type}} type{{$index+1}}">{{type}}</p>
+      <p ng-repeat="type in pokemon.type" class="text-center {{type}} type{{$index+1}} type-main">{{type}}</p>
+      </div>
+      <div>
+       <input class="btn star icon-button" type="button">
+        <input ng-class="{caught: pokemonIsCaught($root.caught, pokemon.name), notCaught: !pokemonIsCaught($root.caught, pokemon.name)}" ng-click="caughtPokemon(pokemon)" class="btn icon-button" type="button">
       </div>
   </div>
 </div>
-    </a>

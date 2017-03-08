@@ -8,10 +8,14 @@
  * Controller of the pokedexApp
  */
 angular.module('pokedexApp')
-  .controller('CaughtCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('CaughtCtrl', function ($rootScope, $scope) {
+   var vm = this;
+
+   this.caught=$rootScope.caught;
+   
+    //Filter pokemon by name
+    $scope.query = {};
+    $scope.name = 'name';
+    
+
   });

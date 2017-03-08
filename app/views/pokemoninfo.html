@@ -1,3 +1,12 @@
+<nav class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+            <img id="left-arrow" ng-href="#/" src="../images/left-arrow-key.png" class="img-responsive" alt="Responsive image">
+            <a class="navbar-brand font-white" href="#">Description</a>
+    </div>
+</nav>
+
+<div class="container-fluid">
 <div class="row">
   <div id="pokemonPhoto" class="col-xs-4">
     <img src="{{pokemonInfo.pokemon.sprites.front_shiny}}" id="pokePhoto" class="img-responsive">
@@ -5,8 +14,10 @@
   <div id="pokemonDescription" class="col-xs-8">
     <div>
       <h3 id="pokemonName" class="same-line">#{{pokemonInfo.pokemon.id}} {{pokemonInfo.pokemon.name}}</h3>
-      <img src="../images/pokeball.png" class="img-responsive same-line icon margin-left" alt="Responsive image">
-      <img src="../images/star.png" class="img-responsive same-line icon  margin-left" alt="Responsive image">
+      <div>
+       <input class="btn star icon-button" type="button">
+        <input ng-class="{caught: pokemonIsCaught($root.caught, pokemonInfo.pokemon.name), notCaught: !pokemonIsCaught($root.caught, pokemonInfo.pokemon.name)}" ng-click="caughtPokemon(pokemonInfo.pokemon)" class="btn icon-button" type="button">
+      </div>
     </div>
     <p class="height">{{pokemonInfo.pokemon.height}}m.  {{pokemonInfo.pokemon.weight}}kg.</p>
     <p class="entry">{{pokemonInfo.species.flavor_text_entries[1].flavor_text}}.</p>
@@ -42,17 +53,21 @@
     <h4 class="font-white">Evolution</h4>
   </div>
 </div>
-<div ng-repeat="evolution in pokemonInfo.evolution_details" class="row pokemonEvolution">
+<div ng-repeat="evolution in pokemonInfo.evolution_details" class="row pokemonEvolution border-top-gray">
+         <a  ng-href='#/pokemonInfo/{{evolution.id}}'
+    >
   <div class="col-xs-4">
     <img src="{{evolution.sprites.front_shiny}}" class="img-responsive border-gray" alt="Responsive image">
   </div>
+  </a>
   <div class="col-xs-8">
     <p class="float-right">#{{evolution.id}}</p>
-    <h4>{{evolution.name}}</h4>
+     <a  ng-href='#/pokemonInfo/{{evolution.id}}'>
+    <h4 class="font-black">{{evolution.name}}</h4>
+     </a>
       <div>
       <p ng-repeat="type in evolution.types" class="text-center {{type.type.name}} type{{$index+1}}">{{type.type.name}}</p>
       </div>
   </div>
 </div>
   </div>
-</div>

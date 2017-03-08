@@ -135,3 +135,8 @@ $water: #3399FF;
 .background-gray{
   background-color:$gray;
 }
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background-color: $dark-red !important;
+}
