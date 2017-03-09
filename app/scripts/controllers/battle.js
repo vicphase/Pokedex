@@ -8,10 +8,12 @@
  * Controller of the pokedexApp
  */
 angular.module('pokedexApp')
-  .controller('BattleCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('BattleCtrl', function ($rootScope, $scope) {
+   var vm = this;
+
+   this.caught=$rootScope.caught;
+   
+    //Filter pokemon by name
+    $scope.query = {};
+    $scope.name = 'name';
   });

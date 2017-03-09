@@ -6,6 +6,15 @@
     </div>
 </nav>
 
+<!-- Large modal -->
+<div id="messageModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <h1>{{message}}</h1>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
 <div class="row">
   <div id="pokemonPhoto" class="col-xs-4">
@@ -15,8 +24,8 @@
     <div>
       <h3 id="pokemonName" class="same-line">#{{pokemonInfo.pokemon.id}} {{pokemonInfo.pokemon.name}}</h3>
       <div>
-       <input class="btn star icon-button" type="button">
-        <input ng-class="{caught: pokemonIsCaught($root.caught, pokemonInfo.pokemon.name), notCaught: !pokemonIsCaught($root.caught, pokemonInfo.pokemon.name)}" ng-click="caughtPokemon(pokemonInfo.pokemon)" class="btn icon-button" type="button">
+        <input ng-class="{battle: pokemonIsBattle(pokemonInfo.pokemon.name), notBattle: !pokemonIsBattle(pokemonInfo.pokemon.name)}" ng-click="battlePokemon(pokemonInfo.pokemon)" class="btn icon-button" type="button">
+        <input ng-class="{caught: pokemonIsCaught(pokemonInfo.pokemon.name), notCaught: !pokemonIsCaught(pokemonInfo.pokemon.name)}" ng-click="caughtPokemon(pokemonInfo.pokemon)" class="btn icon-button" type="button">
       </div>
     </div>
     <p class="height">{{pokemonInfo.pokemon.height}}m.  {{pokemonInfo.pokemon.weight}}kg.</p>

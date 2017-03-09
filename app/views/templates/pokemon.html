@@ -15,8 +15,8 @@
       <p ng-repeat="type in pokemon.type" class="text-center {{type}} type{{$index+1}} type-main">{{type}}</p>
       </div>
       <div>
-       <input class="btn star icon-button" type="button">
-        <input ng-class="{caught: pokemonIsCaught($root.caught, pokemon.name), notCaught: !pokemonIsCaught($root.caught, pokemon.name)}" ng-click="caughtPokemon(pokemon)" class="btn icon-button" type="button">
+        <input ng-class="{battle: pokemonIsBattle(pokemon.name), notBattle: !pokemonIsBattle(pokemon.name)}" ng-click="battlePokemon(pokemon)" class="btn icon-button" type="button">
+        <input ng-class="{caught: pokemonIsCaught(pokemon.name), notCaught: !pokemonIsCaught(pokemon.name)}" ng-click="caughtPokemon(pokemon)" class="btn icon-button" type="button">
       </div>
   </div>
 </div>
