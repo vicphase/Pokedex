@@ -18,7 +18,7 @@
 <div class="container-fluid">
 <div class="row">
   <div id="pokemonPhoto" class="col-xs-4">
-    <img src="{{pokemonInfo.pokemon.sprites.front_shiny}}" id="pokePhoto" class="img-responsive">
+    <img src="{{pokemonInfo.pokemon.sprites.front_default}}" id="pokePhoto" class="img-responsive">
   </div>
   <div id="pokemonDescription" class="col-xs-8">
     <div>
@@ -30,7 +30,7 @@
     </div>
     <p class="height">{{pokemonInfo.pokemon.height}}m.  {{pokemonInfo.pokemon.weight}}kg.</p>
     <p class="entry">{{pokemonInfo.species.flavor_text_entries[1].flavor_text}}.</p>
-    
+
       <div>
       <p ng-repeat="type in pokemonInfo.pokemon.types" class="text-center {{type.type.name}} type{{$index+1}}">{{type.type.name}}</p>
       </div>
@@ -66,7 +66,7 @@
          <a  ng-href='#/pokemonInfo/{{evolution.id}}'
     >
   <div class="col-xs-4">
-    <img src="{{evolution.sprites.front_shiny}}" class="img-responsive border-gray" alt="Responsive image">
+    <img src="{{evolution.sprites.front_default}}" class="img-responsive border-gray" alt="Responsive image">
   </div>
   </a>
   <div class="col-xs-8">

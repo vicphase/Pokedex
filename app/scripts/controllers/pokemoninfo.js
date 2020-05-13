@@ -12,7 +12,7 @@ angular.module('pokedexApp')
    var vm=this;
 
      //Get Pokemon information
-  $http({method: 'GET', url: 'http://pokeapi.co/api/v2/pokemon/'+$routeParams.id})
+  $http({method: 'GET', url: `https://pokeapi.co/api/v2/pokemon/${+$routeParams.id}`})
   .then(function(data){
      vm.pokemon = data.data;
 
@@ -25,25 +25,25 @@ angular.module('pokedexApp')
     //Pokemon types
       vm.pokemon.types.forEach(function(item){
       item.type.name=capitalizeFirstLetter(item.type.name);
-      }); 
+      });
      //Hidden ability
-     var string=capitalizeFirstLetter(vm.pokemon.abilities[0].ability.name);   
+     var string=capitalizeFirstLetter(vm.pokemon.abilities[0].ability.name);
      vm.pokemon.abilities[0].ability.name=string.replace(/-/g, " ");
 
 
 
          //Get pokemon species
     $http({method: 'GET', url: vm.pokemon.species.url})
-  .then(function(data){ 
+  .then(function(data){
     vm.species=data.data;
-      //  vm.species.flavor_text_entries[1].flavor_text=vm.species.flavor_text_entries[1].flavor_text.substring(0,vm.species.flavor_text_entries[1].flavor_text.indexOf('.')); 
+      //  vm.species.flavor_text_entries[1].flavor_text=vm.species.flavor_text_entries[1].flavor_text.substring(0,vm.species.flavor_text_entries[1].flavor_text.indexOf('.'));
       //Habitat
-     string=capitalizeFirstLetter(vm.species.habitat.name);   
+     string=capitalizeFirstLetter(vm.species.habitat.name);
      vm.species.habitat.name=string.replace(/-/g,' ');
 
          //Get pokemon evolution chain
     $http({method: 'GET', url: vm.species.evolution_chain.url})
-  .then(function(data){ 
+  .then(function(data){
 
    var evoData = data.data.chain;
      var evoChain = [];
@@ -64,7 +64,7 @@ var evolutionInfo=[];
 //Get more information about each evolution
 evoChain.forEach(function (item) {
       //Get pokemon evolution chain
-    $http({method: 'GET', url: 'http://pokeapi.co/api/v2/pokemon/'+item.species_name})
+    $http({method: 'GET', url: 'https://pokeapi.co/api/v2/pokemon/'+item.species_name})
   .then(function(data){
     var pokemon = data.data;
     //Evolution name
@@ -72,7 +72,7 @@ evoChain.forEach(function (item) {
         //Evolution types
       pokemon.types.forEach(function(item){
       item.type.name=capitalizeFirstLetter(item.type.name);
-    }); 
+    });
     evolutionInfo.push(pokemon);
       //Sort evolutions
     evolutionInfo.sort(function(a, b) {
@@ -80,7 +80,7 @@ evoChain.forEach(function (item) {
 });
 
    });
-   
+
   });
 
  vm.evolution_details=evolutionInfo;
